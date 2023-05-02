@@ -1,0 +1,26 @@
+{% extends 'herencia_HTML/base.html' %}
+
+{% block title %} Mascotas {% endblock %}
+
+{% block titulo %} Buscar Mascotas por Tipo (perro, gato, ...) {% endblock %}
+
+{% block contenido %} 
+
+<form>
+    <p>
+        <label for id="criterio_tipo">Tipo</label>
+        <input type="text" name="criterio_tipo" maxlength="100" required="" id="criterio_tipo">
+    </p>
+    <p>
+        <input type="submit" value="Buscar">
+    </p>
+</form>
+
+<ul>
+    {% for mascota in Mascotas %}
+        <li>{{mascota}}</li>
+    {% endfor %}
+</ul>
+<br>
+
+{% endblock %}

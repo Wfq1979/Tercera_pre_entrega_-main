@@ -1,0 +1,26 @@
+{% extends 'herencia_HTML/base.html' %}
+
+{% block title %} Vehiculos {% endblock %}
+
+{% block titulo %} Buscar Vehiculos registrados por Marca{% endblock %}
+
+{% block contenido %} 
+
+<form>
+    <p>
+        <label for id="criterio_nombre">Marca</label>
+        <input type="text" name="criterio_marca" maxlength="100" required="" id="criterio_marca">
+    </p>
+    <p>
+        <input type="submit" value="Buscar">
+    </p>
+</form>
+
+<ul>
+    {% for vehiculo in Vehiculos %}
+        <li>{{vehiculo}}</li>
+    {% endfor %}
+</ul>
+<br>
+
+{% endblock %}

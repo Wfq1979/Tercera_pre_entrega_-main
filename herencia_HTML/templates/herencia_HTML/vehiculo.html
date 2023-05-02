@@ -1,0 +1,22 @@
+{% extends 'herencia_HTML/base.html' %}
+
+{% block title %} Vehiculos {% endblock %}
+
+{% block titulo %} Listado de Vehiculos registrados {% endblock %}
+
+{% block contenido %} 
+
+<form action="{% url 'vehiculos-crear' %}" method="POST">
+    {% csrf_token %}
+    {{Formulario.as_p}}
+    <input type="submit" value="Agregar">
+</form>
+
+<ul>
+    {% for vehiculo in Vehiculos %}
+        <li>{{vehiculo}}</li>
+    {% endfor %}
+</ul>
+<br>
+
+{% endblock %}

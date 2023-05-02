@@ -1,0 +1,22 @@
+{% extends 'herencia_HTML/base.html' %}
+
+{% block title %} Personas {% endblock %}
+
+{% block titulo %} Listado de Personas registradas {% endblock %}
+
+{% block contenido %} 
+
+<form action="{% url 'personas-crear' %}" method="POST">
+    {% csrf_token %}
+    {{Formulario.as_p}}
+    <input type="submit" value="Agregar">
+</form>
+
+<ul>
+    {% for persona in Personas %}
+        <li>{{persona}}</li>
+    {% endfor %}
+</ul>
+<br>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'herencia_HTML/base.html' %}
+
+{% block title %} Personas {% endblock %}
+
+{% block titulo %} Listado de Personas registradas {% endblock %}
+
+{% block contenido %} 
+
+<form>
+    <p>
+        <label for id="criterio_nombre">Nombre</label>
+        <input type="text" name="criterio_nombre" maxlength="100" required="" id="criterio_nombre">
+    </p>
+    <p>
+        <input type="submit" value="Buscar">
+    </p>
+</form>
+
+<ul>
+    {% for persona in Personas %}
+        <li>{{persona}}</li>
+    {% endfor %}
+</ul>
+<br>
+
+{% endblock %}
